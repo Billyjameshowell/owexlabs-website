@@ -1,0 +1,96 @@
+---
+import { Picture } from "@astrojs/image/components";
+import heroImage from "assets/squigglehero.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            /* background-image: url('/squigglehero.png'); */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #7834F5;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+        }
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            mix-blend-mode: overlay;
+            font-size:3em;
+            font-weight:600;
+        }
+        .centered-image {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .corner-text {
+            position: absolute;
+            color: white;
+            padding: 50px;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+
+
+    <section class="hero-section">
+        <!-- <div class="overlay"></div> -->
+    <Picture
+      src={heroImage}
+      alt="pink squiggle"
+      widths={[200, 400, 600]}
+      aspectRatio="4:3"
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+
+    <div class="centered-text">
+        <h1>Revolutionize Your Online Presence</h1>
+    </div>
+        <a class="corner-text top-left" href="/">Owex Labs</a>
+        <a class="corner-text top-right" href="mailto:billy@owexlabs.com">Contact</a>
+        <a class="corner-text bottom-left" href="#bottom-left">SEO</a>
+        <a class="corner-text bottom-right" href="#bottom-right">No-Code</a>
+        
+    </section>
