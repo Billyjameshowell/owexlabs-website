@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 8.6.7
 
 specifiers:
   '@astrojs/image': ^0.14.1
